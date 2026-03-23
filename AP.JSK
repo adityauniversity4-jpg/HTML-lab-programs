@@ -1,0 +1,20 @@
+import React from "react";
+import Parent from "./Props/Propsandstates";
+import ConditionalRendering from "./Props/ConditionalRendering";
+import ListRendering from "./RenderRoute/ListRender";
+import Hooks from "./hooks/HookImportance";
+import TodoTask from "./hooks/TodoList";
+function App() {
+  return (
+    <div className="App">
+       {/* <h1>React App</h1> */}
+      {/* <Parent />   */}
+       {/* <ConditionalRendering />  */}
+       {/* <ListRendering /> */}
+    {/* <Hooks /> */}
+    <TodoTask />
+    </div>
+  );
+}
+
+export default App;
