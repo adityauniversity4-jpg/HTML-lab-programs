@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+
+function TodoTask() {
+  const [task, setTask] = useState("");
+  const [items, setItems] = useState([]);
+
+  // Add task
+  const addTask = () => {
+    setItems([...items, task]);
+    setTask("");
+  };
+
+  // Delete task
+  const deleteTask = (index) => {
+    const newItems = items.filter((_, i) => i !== index);
+    setItems(newItems);
+  };
+
+  return (
+    <div>
+      <h2>To-Do List</h2>
+
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Enter task"
+      />
+
+      <button onClick={addTask}>Add</button>
+
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>
+            {item}
+            <button onClick={() => deleteTask(index)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default TodoTask;
