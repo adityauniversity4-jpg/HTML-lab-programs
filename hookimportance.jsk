@@ -1,0 +1,24 @@
+HookImportance.jsx
+
+import React, { useState, useEffect } from "react";
+
+function Hooks() {
+  const [count, setCount] = useState(0);
+
+  // useEffect Hook
+  useEffect(() => {
+    console.log("Component Loaded or Updated");
+  });
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+export default Hooks;
